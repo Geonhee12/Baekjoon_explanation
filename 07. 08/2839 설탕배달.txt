@@ -1,5 +1,4 @@
 #include <iostream>
-
 int main()
 {
 	int n, x=1, y, real_x, num_5, check=0;
