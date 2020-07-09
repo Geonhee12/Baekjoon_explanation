@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+	int sum=0, max, min, k=0, arr[10000] = { 0, };
+	scanf_s("%d%d", &min, &max);
+	for (int i= min; i <= max; i++)
+	{
+		for (int j = 2; j <= i; j++)
+		{
+			if (i == j)
+			{
+				arr[k] = j;
+				k++;
+			}
+			if (i % j == 0)
+				break;
+
+
+		}
+	}
+
+	for (int i = 0; i < k; i++)
+		sum += arr[i];
+	if (sum != 0)
+		printf("%d\n%d", sum, arr[0]);
+	else
+		printf("-1");
+	return 0;
+}

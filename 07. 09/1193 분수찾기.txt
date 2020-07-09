@@ -1,0 +1,38 @@
+#include <iostream>
+int main()
+{
+	int x, bot=1 , count, i, count_x;
+	scanf_s("%d", &x);
+	for (i = 1; i*(i + 1) < 2 * x; i++)
+	{
+	}
+	count = i;
+	count_x = count * (count + 1) / 2 - x;
+
+	if (count % 2 == 0)
+	{
+		for (int j = 0; j < count_x; j++)
+		{
+			bot++;
+		}
+
+		printf("%d/%d", (count + 1) - bot, bot);
+	}
+
+	else
+	{
+		bot = count;
+		for (int j = 0; j < count_x; j++)
+		{
+			bot--;
+		}
+
+		printf("%d/%d", (count + 1) - bot, bot);
+	}
+
+	return 0;
+}
+
+고찰 
+6번 행에서 =를 포함하니 for문을 한번 더 돌려 각 집합의 마지막 수가 이상하게 넘어감
+짝수, 홀수 나누고 분모를 기준으로 하니 분자는 자동으로 잡힘

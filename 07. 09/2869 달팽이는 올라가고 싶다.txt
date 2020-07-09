@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+	
+	double a, b, v, day, floor_day;
+	scanf_s("%lf%lf%lf", &a, &b, &v);
+	day = (v-a)/ (a - b);
+	floor_day = floor(day);
+	if (floor_day*(a - b) + a >= v)
+		printf("%d", int(day) + 1);
+	else
+		printf("%d", int(day) + 2);
+	return 0;
+}
+
+고찰
+floor(day); 하면 day가 버림되는줄 알았다 ㅎㅎ

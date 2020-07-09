@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main()
+{
+	int A, B, C, i;
+	scanf_s("%d%d%d", &A, &B, &C);
+
+	if (B >= C)
+		printf("-1");
+
+	else
+	{
+		i = A / (C - B);
+		printf("%d", i + 1);
+	}
+
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main()
+{
+	int num, check=1, check_num=6, count = 2;
+	scanf_s("%d", &num);
+	if (num > check)
+	{
+		while (1)
+		{
+			check += check_num;
+			if (num <= check)
+				break;
+			check_num += 6;
+			count++;
+		};
+		printf("%d", count);
+	}
+	else
+		printf("1");
+}
+
+고찰
+12행 num과 check 비교문에서 =없이 <만 썼더니 7과 같은 경계가 되는 값도 
+count++이 되어 한 단계 더 나아간다고 출력되어버림 

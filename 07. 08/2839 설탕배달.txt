@@ -1,0 +1,36 @@
+#include <iostream>
+
+int main()
+{
+	int n, x=1, y, real_x, num_5, check=0;
+	scanf_s("%d",&n);
+	
+	do
+	{
+
+		num_5 = n - (5 * x);
+		if (num_5 % 3 == 0 && num_5 >= 0)
+		{
+			y = num_5 / 3;
+			real_x = x;
+			check = 1;
+		}
+		x++;
+
+	} while (num_5 >= 0);
+
+	if (check == 0 && n % 3 ==0)
+	{
+
+		real_x = 0;
+		y = n / 3;
+		check = 1;
+	}
+
+	if (check != 1)
+		printf("-1");
+	else
+		printf("%d", real_x + y);
+	
+	return 0;
+}
