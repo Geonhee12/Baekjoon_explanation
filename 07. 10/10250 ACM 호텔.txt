@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+int main()
+{
+	int testcase;
+	double h, w, n, x, y, ceill_y;
+	scanf_s("%d", &testcase);
+	for (int i = 0; i < testcase; i++)
+	{
+		scanf_s("%lf%lf%lf", &h, &w, &n);
+		x = int(n) % int(h);
+		if (x == 0)
+			x = h;
+		y = n / h;
+		ceill_y = ceil(y);
+		if(ceill_y <10)
+			printf("%d0%d\n", int(x), int(ceill_y));
+		
+		else
+			printf("%d%d\n", int(x), int(ceill_y));
+	}
+	return 0;
+}
+
+고찰
+16행에 ceill_y를 써야하는데 y를 써서 한참 틀렸다

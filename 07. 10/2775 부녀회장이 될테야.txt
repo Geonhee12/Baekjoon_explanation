@@ -1,0 +1,28 @@
+#include <iostream>
+int sum(int k, int n)
+{
+	if (n == 0)
+		return 0;
+	if (k == 0 && n !=0)
+		return n;
+
+	else
+			return sum(k, n - 1) + sum(k - 1, n);
+}
+
+int main()
+{
+	int testcase, h, w;
+	scanf_s("%d", &testcase);
+	for (int i = 0; i < testcase; i++)
+	{
+		scanf_s("%d%d", &h, &w);
+		printf("%d",sum(h, w));
+		printf("\n");
+	}
+
+	return 0;
+}
+
+고찰
+20번 행처럼 printf해줘야지 값이 나오지 그냥 sum(h,w)하면 출력이 되지 않는다.
