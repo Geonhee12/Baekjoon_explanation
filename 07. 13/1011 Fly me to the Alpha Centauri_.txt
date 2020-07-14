@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    int testcase, x, y, sub;
+    double floor_sqrt, sqrt_sub,answer;
+    scanf("%d", &testcase);
+    for(int i = 0; i<testcase; i++)
+    {
+        scanf("%d%d", &x, &y);
+        sub =y -x;
+        sqrt_sub = sqrt(sub);
+        floor_sqrt = floor(sqrt_sub);
+        if(sqrt_sub != floor_sqrt)
+        {
+            if(sub > floor_sqrt*floor_sqrt && sub <= floor_sqrt*floor_sqrt + floor_sqrt)
+                answer = floor_sqrt *2;
+            else
+                answer = floor_sqrt+ floor_sqrt +1;
+        }
+        
+        else
+            answer = floor_sqrt + floor_sqrt -1;
+        
+        printf("%d\n", int(answer));
+    }
+    
+    return 0;
+}
+
