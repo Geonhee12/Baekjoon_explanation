@@ -1,0 +1,43 @@
+#include "iostream"
+
+int main()
+{
+    char word[1000000] = {0,};
+    int count[32] ={0,}, big =0, check=0, max=0;
+    scanf("%s", word);
+    for(int i=0; word[i] != 0; i++)
+    {
+        if(word[i] < 96)
+        {
+            count[word[i]-65]++;
+        }
+        
+        if(word[i] > 96)
+        {
+            count[word[i]-97]++;
+        }
+    }
+    
+    for(int j=0; j<32; j++)
+    {
+        if(big == 0)
+            big = count[j];
+        else if(count[j] > big)
+            big = count[j];
+    }
+    for(int j=0; j < 32; j++)
+    {
+        if(big== count[j])
+        {
+            max++;
+            check = j;
+        }
+        
+        
+    }
+    if(max == 1)
+        printf("%c", check+65);
+    
+    else
+        printf("?");
+}
