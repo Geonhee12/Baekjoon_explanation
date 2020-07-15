@@ -1,0 +1,54 @@
+#include <iostream>
+
+int main()
+{
+    char prime[10050] ={0,};
+    int testcase, num, check, best_j=0, best_check=0, sub_check_j = 0;
+    for(int i=2; i<=10000; i++)
+    {
+        if(prime[i] == 1)
+            continue;
+        for(int j = 2; j*i <= 10000; j++)
+        {
+            prime[j*i] = 1;
+        }
+    }
+    scanf("%d", &testcase);
+    for(int i=0; i<testcase; i++)
+    {
+        scanf("%d", &num);
+        for(int j= 2; j<=num/2; j++)
+        {
+            if(prime[j] == 1)
+                continue;
+            else
+            {
+                check = num - j;
+                
+                if(prime[check] == 1)
+                    continue;
+                else
+                {
+                    if(sub_check_j == 0)
+                    {
+                        sub_check_j = check -j;
+                        best_j = j;
+                        best_check = check;
+                    }
+                    else if(sub_check_j > check- j)
+                    {
+                        best_j = j;
+                        best_check = check;
+                    }
+                }
+            }
+    
+
+        }
+        printf("%d %d\n", best_j, best_check);
+        sub_check_j = 0;
+        best_check=0;
+        best_j =0;
+
+    }
+}
