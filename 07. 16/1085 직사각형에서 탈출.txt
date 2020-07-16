@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main()
+{
+    int x, y, w ,h, min=0;
+    scanf("%d%d%d%d", &x, &y, &w, &h);
+    if(x >= y)
+        min = y;
+    else
+        min = x;
+    
+    if(min > h-y)
+        min = h-y;
+    if(min > w-x)
+        min = w-x;
+    printf("%d", min);
+    return 0;
+}
+
+고찰
+간단하게 푸는 것이 좋은가
+보기 좋은 것이 좋은가?

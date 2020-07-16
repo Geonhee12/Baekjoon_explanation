@@ -1,0 +1,35 @@
+#include <iostream>
+int main()
+{
+    int arr[6] = {0,};
+    for(int i=0; i<3; i++)
+        scanf("%d%d", &arr[i], &arr[i+3]);
+    
+    for(int i=0; i<2; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            if(arr[j] == arr[i] && i != j)
+            {
+                arr[j] = 0;
+                arr[i] =0;
+            }
+            if(arr[j+3] == arr[i+3] && i+3 != j+3)
+            {
+                arr[j+3] = 0;
+                arr[i+3] =0;
+            }
+        }
+    }
+    for(int i=0; i <6; i++)
+    {
+        if(arr[i] != 0)
+            printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
+
+고찰
+모로가도 답에만 가면 되는 것인지
+좀 더 간결하게 풀고싶다
