@@ -1,0 +1,9 @@
+#include <iostream>
+#define PI 3.141592653589793
+int main()
+{
+    double r;
+    scanf("%lf", &r);
+    printf("%lf\n", PI *r * r);
+    printf("%lf", 2*r*r);
+}
